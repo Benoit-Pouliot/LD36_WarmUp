@@ -8,9 +8,12 @@ from app.scene.titleScreen.titleScreen import TitleScreen
 from app.settings import *
 
 if __name__ == '__main__':
+    print("poop")
+
+if __name__ == '__main__':
     #Code to check if the code is running from a PyInstaller --onefile .exe
-    if getattr(sys, 'frozen', False):
-        os.chdir(sys._MEIPASS)
+    # if getattr(sys, 'frozen', False):
+    #     os.chdir(sys._MEIPASS)
 
     # Init
     pygame.mixer.pre_init(44100, -16, 2, 2048)

@@ -76,7 +76,7 @@ WINNER = 3
 # You can turn your tag on in your own settings_local.py for personal use
 
 TAG_BP = 0
-
+TAG_MARIE = 0
 
 # Load settings_local.py if exist
 try:

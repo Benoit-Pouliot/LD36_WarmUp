@@ -9,6 +9,7 @@ from app.scene.titleScreen.eventHandlerTitleScreen import EventHandlerTitleScree
 from app.mapData import MapData
 from app.settings import *
 from app.scene.musicFactory import MusicFactory
+from app.scene.drawer import Drawer
 
 
 class TitleScreen:
@@ -29,6 +30,8 @@ class TitleScreen:
         # self.menu.addOption('Level 1', self.startFirstLevel)
 
         self.eventHandler = EventHandlerTitleScreen()
+        self.drawer = Drawer()
+
 
         self.type = TITLE_SCREEN
         self.nextScene = None
@@ -41,12 +44,7 @@ class TitleScreen:
         while self.sceneRunning:
             self.eventHandler.eventHandle(self.menu.optionList, self.menu.selector)
             self.menu.spritesMenu.update()  # This would be in the logic
-            self.draw()  # Drawer in THIS file, below
-
-    def draw(self):
-        self.menu.spritesMenu.draw(self.screen)
-
-        pygame.display.flip()
+            self.drawer.draw(self.screen, None, self.menu.spritesMenu, None)  # Drawer in THIS file, below
 
     def startGame(self):
         self.nextScene = WORLD_MAP

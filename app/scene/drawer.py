@@ -7,8 +7,11 @@ class Drawer:
         self.FPS = FPS
 
     def draw(self, screen, camera, spritesHUD, player):
-        camera.center(player.rect.center)
-        camera.draw(screen)
+
+        if camera != None:
+            camera.center(player.rect.center)
+            camera.draw(screen)
+
         spritesHUD.draw(screen)
         pygame.display.flip()
         self.clock.tick(self.FPS)
