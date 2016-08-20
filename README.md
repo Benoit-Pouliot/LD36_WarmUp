@@ -1,6 +1,6 @@
 # LD36_WarmUp
 
-Preparation for [LudumDare36][http://ludumdare.com/compo/]
+Preparation for [LudumDare36](http://ludumdare.com/compo/)
 
 
 # Tools used
