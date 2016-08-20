@@ -36,6 +36,3 @@ if __name__ == '__main__':
 
     sceneHandler.mainLoop()
 
-#popopopddafdasfdafasd
-#435gfds
-#fdsgg
