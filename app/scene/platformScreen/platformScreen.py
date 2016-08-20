@@ -1,5 +1,4 @@
 
-from app.menuPause.menuPause import MenuPause
 from app.scene.platformScreen.eventHandlerPlatformScreen import EventHandlerPlatformScreen
 from app.scene.platformScreen.logicHandlerPlatformScreen import LogicHandlerPlatformScreen
 from app.scene.drawer import Drawer
@@ -28,10 +27,6 @@ class PlatformScreen:
         self.logicHandler = LogicHandlerPlatformScreen(self.screen, self.player, self.mapData)
         self.drawer = Drawer()
 
-        #Menu
-        self.menuPause = MenuPause(screen, self.backToMain,backToWorldMap=self.backToWorldMap)
-        self.eventHandler.menuPause = self.menuPause
-
         MusicFactory(PLATFORM_SCREEN, self.mapData.nameMap)
 
 
@@ -58,10 +53,10 @@ class PlatformScreen:
     def backToMain(self):
         self.nextScene = TITLE_SCREEN
         self.gameData.typeScene = TITLE_SCREEN
-        self.menuPause.close()
+
         self.close()
 
     def backToWorldMap(self):
         newMapData = MapData('WorldMap', 'StartPointWorld')
         self.checkNewMap(newMapData)
-        self.menuPause.close()
+

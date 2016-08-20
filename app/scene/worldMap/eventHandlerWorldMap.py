@@ -14,9 +14,10 @@ class EventHandlerWorldMap():
 
             elif dummyEv.type == pygame.KEYDOWN:
                 if dummyEv.key == pygame.K_BACKSPACE:
-                    self.menuPause.mainLoop()
-                elif dummyEv.key == pygame.K_ESCAPE:
-                    self.menuPause.mainLoop()
+                    pass
+                    # self.menuPause.mainLoop()
+                # elif dummyEv.key == pygame.K_ESCAPE:
+                #     self.menuPause.mainLoop()
                 elif dummyEv.key == pygame.K_RIGHT: #Does nothing for now...
                     player.rightPressed = True
                     player.moveRight()

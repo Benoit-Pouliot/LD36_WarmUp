@@ -1,5 +1,5 @@
 from app.tools.functionTools import *
-from app.sprites.item.item import Item
+#from app.sprites.item.item import Item #TODO Créer un item générique et arranger le code du create ci bas
 
 
 class ItemFactory:
@@ -7,7 +7,8 @@ class ItemFactory:
         pass
 
     def create(self, item):
-        iType = seekAtt(item, "type")
-        if iType == "item" and hasattr(item, 'name'):
-            return Item(item.x, item.y, item.name)
+        pass
+        #iType = seekAtt(item, "type")
+        #if iType == "item" and hasattr(item, 'name'):
+            #return Item(item.x, item.y, item.name)
 

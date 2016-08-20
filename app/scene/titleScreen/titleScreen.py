@@ -49,21 +49,8 @@ class TitleScreen:
         pygame.display.flip()
 
     def startGame(self):
-        self.nextScene = PET_SCREEN
-        self.sceneRunning = False
-        self.gameData.typeScene = PET_SCREEN
-        self.gameData.mapData = None
-
-    # Only for debug
-    def startWorldMap(self):
         self.nextScene = WORLD_MAP
         self.sceneRunning = False
         self.gameData.typeScene = WORLD_MAP
         self.gameData.mapData = MapData("WorldMap", "StartPointWorld")
 
-    # Only for debug
-    def startFirstLevel(self):
-        self.nextScene = PLATFORM_SCREEN
-        self.sceneRunning = False
-        self.gameData.typeScene = PLATFORM_SCREEN
-        self.gameData.mapData = MapData("LevelSheriff", "StartPointSheriff")

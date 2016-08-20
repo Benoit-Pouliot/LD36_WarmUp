@@ -38,10 +38,10 @@ class MapData:
                 self.allSprites.add(enemy)
                 self.enemyGroup.add(enemy)
 
-            if obj.type == "item":
-                item = iFactory.create(obj)
-                self.allSprites.add(item)
-                self.itemGroup.add(item)
+            # if obj.type == "item":
+            #     item = iFactory.create(obj)
+            #     self.allSprites.add(item)
+            #     self.itemGroup.add(item)
 
         # Put camera in mapData
         self.camera = pyscroll.PyscrollGroup(map_layer=self.cameraPlayer, default_layer=SPRITE_LAYER)

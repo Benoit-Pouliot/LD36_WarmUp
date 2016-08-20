@@ -2,7 +2,7 @@ import pygame
 import os
 
 from app.settings import *
-from app.bullet import Bullet
+from app.sprites.bullet import Bullet
 
 
 class PlayerPlatform(pygame.sprite.Sprite):

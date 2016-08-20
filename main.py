@@ -21,8 +21,8 @@ if __name__ == '__main__':
     screenSize = (SCREEN_WIDTH, SCREEN_HEIGHT)
     screen = pygame.display.set_mode(screenSize)
 
-    icon = pygame.transform.scale(pygame.image.load(os.path.join('img', 'dragon.png')), (TILEDIMX, TILEDIMY))
-    pygame.display.set_icon(icon)
+    #icon = pygame.transform.scale(pygame.image.load(os.path.join('img', 'dragon.png')), (TILEDIMX, TILEDIMY))
+    #pygame.display.set_icon(icon)
     pygame.display.set_caption("I want my dragon")
 
     # Setup with gameData and the first scene
@@ -32,7 +32,6 @@ if __name__ == '__main__':
     sceneHandler.runningScene = titleScene
 
     sceneHandler.mainLoop()
-
 
 #popopopddafdasfdafasd
 #435gfds

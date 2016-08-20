@@ -1,9 +1,8 @@
 from app.mapData import MapData
-from app.bullet import *
+from app.sprites.bullet import *
 from app.settings import *
 from app.scene.platformScreen.collisionPlayerPlatform import CollisionPlayerPlatform
 from app.tools.functionTools import *
-from app.sprites.deadText import DeadText
 import pygame
 
 class LogicHandlerPlatformScreen:
@@ -14,10 +13,6 @@ class LogicHandlerPlatformScreen:
         self.collisionChecker = CollisionPlayerPlatform(player, mapData)
         self.newMapData = None
         self.mapData = mapData
-
-        self.deadText = DeadText(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
-        self.gameOverGroup = pygame.sprite.Group()
-        self.gameOverGroup.add(self.deadText)
 
         self.screen = screen
 
@@ -85,7 +80,6 @@ class LogicHandlerPlatformScreen:
 
     def gameOverCondition(self,player):
         if player.isAlive == False:
-            self.gameOverGroup.draw(self.screen)
             pygame.display.flip()
             pygame.time.wait(2000)
             self.newMapData = MapData('WorldMap', 'StartPointWorld')

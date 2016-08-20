@@ -2,7 +2,7 @@ import pygame
 import os
 
 from app.sprites.enemy.enemy import Enemy
-from app.bullet import BeerBullet
+from app.sprites.bullet import BeerBullet
 from app.settings import *
 import random
 
