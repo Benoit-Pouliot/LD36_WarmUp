@@ -40,7 +40,6 @@ class WorldMap:
 
             self.logicHandler.handle(self.player, oldTilePosX,oldTilePosY)
             self.checkNewMap(self.logicHandler.newMapData)
-            self.checkGoToLevelHome(self.logicHandler.boolGoToLevelHome)
 
             self.drawer.draw(self.screen, self.mapData.camera, self.mapData.spritesHUD, self.player)
 
@@ -57,19 +56,5 @@ class WorldMap:
             self.gameData.typeScene = PLATFORM_SCREEN
             self.gameData.mapData = newMapData
 
-    def checkGoToLevelHome(self, boolGoToLevelHome):
-        if boolGoToLevelHome is True:
-            # need to go to LevelHome (no map)
-            self.sceneRunning = False
-            self.nextScene = PET_SCREEN
-            self.gameData.typeScene = PET_SCREEN
-            self.gameData.mapData = None
-
     def close(self):
         self.sceneRunning = False #To stop game running
-
-    def backToMain(self):
-        self.nextScene = TITLE_SCREEN
-        self.gameData.typeScene = TITLE_SCREEN
-        self.menuPause.close()
-        self.close()

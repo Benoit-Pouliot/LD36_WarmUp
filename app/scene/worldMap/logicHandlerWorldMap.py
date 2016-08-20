@@ -1,5 +1,4 @@
 from app.mapData import MapData
-from app.settings import *
 from app.scene.worldMap.collisionPlayerWorldMap import CollisionPlayerWorldMap
 
 class LogicHandlerWorldMap:
@@ -31,6 +30,7 @@ class LogicHandlerWorldMap:
                         break
                     if obj.LevelZone == 'LevelIndian' and self.gameData.mapUnlock['map3'] == False:
                         break
+
                     nameNewZone = obj.LevelZone
                     nameInZone = obj.InZone
 
