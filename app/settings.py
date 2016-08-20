@@ -71,3 +71,21 @@ NORMAL = 0
 KEY_ANIMAL = 1
 DEAD_END = 2
 WINNER = 3
+
+# If you add a Tag for debugging, you MUST set it here at 0 for everyone
+# You can turn your tag on in your own settings_local.py for personal use
+
+TAG_BP = 0
+
+
+# Load settings_local.py if exist
+try:
+    app_info = __import__('imp').find_module('app')
+    app = __import__('imp').load_module('app', *app_info)
+    __import__('imp').find_module('settings_local', app.__path__)
+    settingsLocalFound = True
+except ImportError:
+    settingsLocalFound = False
+
+if settingsLocalFound:
+    from app.settings_local import *
