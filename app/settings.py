@@ -20,6 +20,7 @@ FONT_NAME = 'arial'
 FPS = 60
 
 #DIMENSION
+# http://gamedevelopment.tutsplus.com/articles/quick-tip-what-is-the-best-screen-resolution-for-your-game--gamedev-14723
 SCREEN_WIDTH = 1024
 SCREEN_HEIGHT = 768
 TILE_WIDTH = 32

@@ -26,7 +26,7 @@ class Enemy(pygame.sprite.Sprite):
         self.isFrictionApplied = False
         self.isCollisionApplied = False
 
-        self.soundDead = pygame.mixer.Sound(os.path.join('music_pcm', 'Punch.wav'))
+        self.soundDead = pygame.mixer.Sound(os.path.join('music_pcm', 'Punch2.wav'))
         self.soundDead.set_volume(1)
 
     def update(self):
