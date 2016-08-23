@@ -14,6 +14,12 @@ class EnemyShooter(Enemy):
         self.name = "enemyShooter"
 
         self.imageEnemy = pygame.image.load(os.path.join('img', 'enemybob.png'))
+
+        self.imageEnemy2 = pygame.image.load(os.path.join('img', 'enemybob2.png'))
+        self.imageEnemy3 = pygame.image.load(os.path.join('img', 'enemybob3.png'))
+        self.enemyFrames = [self.imageEnemy,self.imageEnemy2,self.imageEnemy3]
+        self.animation = self.stand_animation()
+
         self.rect = self.imageEnemy.get_rect()
         self.rect.x = x
         self.rect.y = y
@@ -38,7 +44,17 @@ class EnemyShooter(Enemy):
         if self.direction == "Left":
             self.image = self.imageEnemy
 
+    #For animation testing by Marie
+    def stand_animation(self):
+        while True:
+            for frame in self.enemyFrames :
+                self.image = frame
+                for i in range(20) :
+                    yield None
+
     def update(self):
+
+        next(self.animation)
 
         self.imageIterShoot += 1
         if self.imageIterShoot > self.imageWaitNextShoot:
@@ -53,6 +69,7 @@ class EnemyShooter(Enemy):
             self.theMap.enemyBullet.add(bullet)
 
             self.imageIterShoot = 0
+
 
         self.rect.x += self.speedx
         if self.speedy < 15:
