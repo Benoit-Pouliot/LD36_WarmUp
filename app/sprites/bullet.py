@@ -37,13 +37,23 @@ class Bullet(Enemy):
             self.rect.x = x - self.rect.width
         self.speedy = 0
 
-        # self.animation = Animation(self.image, {RIGHT: self.imageBulletRight, LEFT: self.imageBulletLeft})
+        self.animation = None
 
         self.friendly = friendly
 
     def update(self):
         self.rect.x += self.speedx
-        # self.animation.update(self)
+        if self.animation is not None :
+           next(self.animation)
+
+
+    # For animation testing by Marie. timer is the number of time between frame.
+    def stand_animation(self,frames,timer):
+        while True:
+            for frame in frames:
+                self.image = frame
+                for i in range(timer):
+                    yield None
 
 class HeartBullet(Bullet):
     def __init__(self, x, y, direction=RIGHT, friendly=True):
@@ -74,7 +84,14 @@ class BeerBullet(Bullet):
 
         self.name = "bullet"
 
-        self.image = pygame.image.load(os.path.join('img', 'biere32x32.png'))
+        image1 = pygame.image.load(os.path.join('img', 'biere32x32.png'))
+        image2 = pygame.image.load(os.path.join('img', 'biere32x32-2.png'))
+        image3 = pygame.image.load(os.path.join('img', 'biere32x32-3.png'))
+        image4 = pygame.image.load(os.path.join('img', 'biere32x32-4.png'))
+        self.frames = [image1,image2,image3,image4]
+        self.image = self.frames[0]
+
+        self.animation = self.stand_animation(self.frames,6)
 
         self.direction = direction
 

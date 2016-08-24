@@ -3,6 +3,8 @@ import os
 
 from app.sprites.enemy.enemy import Enemy
 from app.sprites.bullet import BeerBullet
+from app.tools.animation import Animation
+
 from app.settings import *
 import random
 
@@ -17,8 +19,8 @@ class EnemyShooter(Enemy):
 
         self.imageEnemy2 = pygame.image.load(os.path.join('img', 'enemybob2.png'))
         self.imageEnemy3 = pygame.image.load(os.path.join('img', 'enemybob3.png'))
-        self.enemyFrames = [self.imageEnemy,self.imageEnemy2,self.imageEnemy3]
-        self.animation = self.stand_animation()
+        self.frames = [self.imageEnemy,self.imageEnemy2,self.imageEnemy3]
+        self.animation = Animation(self,self.frames,20)
 
         self.rect = self.imageEnemy.get_rect()
         self.rect.x = x
@@ -39,22 +41,10 @@ class EnemyShooter(Enemy):
 
     def setDirection(self, direction):
         self.direction = direction
-        if self.direction == "Right":
-            self.image = self.imageEnemy
-        if self.direction == "Left":
-            self.image = self.imageEnemy
-
-    #For animation testing by Marie
-    def stand_animation(self):
-        while True:
-            for frame in self.enemyFrames :
-                self.image = frame
-                for i in range(20) :
-                    yield None
 
     def update(self):
 
-        next(self.animation)
+        self.animation.update(self)
 
         self.imageIterShoot += 1
         if self.imageIterShoot > self.imageWaitNextShoot:
