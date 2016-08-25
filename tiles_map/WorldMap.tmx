@@ -124,7 +124,7 @@
   </object>
  </objectgroup>
  <objectgroup name="inZoneLayer">
-  <object id="14" name="InZone" x="800" y="415" width="32" height="32">
+  <object id="14" name="InZone" x="135" y="193" width="32" height="32">
    <properties>
     <property name="StartPoint" value="StartPointWorld"/>
    </properties>

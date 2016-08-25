@@ -38,6 +38,7 @@ class MapData:
                 self.allSprites.add(enemy)
                 self.enemyGroup.add(enemy)
 
+
             # if obj.type == "item":
             #     item = iFactory.create(obj)
             #     self.allSprites.add(item)

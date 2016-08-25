@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="42" height="30" tilewidth="32" tileheight="32" nextobjectid="85">
- <tileset firstgid="1" name="Set_01" tilewidth="32" tileheight="32" tilecount="25">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="42" height="30" tilewidth="32" tileheight="32" nextobjectid="91">
+ <tileset firstgid="1" name="Set_01" tilewidth="32" tileheight="32" tilecount="25" columns="5">
   <image source="img/Set_01.png" width="160" height="160"/>
+  <tile id="16">
+   <objectgroup draworder="index">
+    <object id="3" name="brickCollision" type="collision" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
  </tileset>
- <tileset firstgid="26" name="etoile" tilewidth="32" tileheight="32" tilecount="1">
+ <tileset firstgid="26" name="etoile" tilewidth="32" tileheight="32" tilecount="1" columns="1">
   <image source="img/etoile.png" width="32" height="32"/>
  </tileset>
- <tileset firstgid="27" name="couleurBackground" tilewidth="32" tileheight="32" tilecount="1">
+ <tileset firstgid="27" name="couleurBackground" tilewidth="32" tileheight="32" tilecount="1" columns="1">
   <image source="img/couleurBackground.png" width="32" height="32"/>
  </tileset>
- <tileset firstgid="28" name="trap" tilewidth="32" tileheight="32" tilecount="1">
+ <tileset firstgid="28" name="trap" tilewidth="32" tileheight="32" tilecount="1" columns="1">
   <image source="img/trap.png" width="32" height="32"/>
  </tileset>
- <tileset firstgid="29" name="Door_v01" tilewidth="32" tileheight="32" tilecount="1">
+ <tileset firstgid="29" name="Door_v01" tilewidth="32" tileheight="32" tilecount="1" columns="1">
   <image source="img/Door_v01.png" width="32" height="32"/>
  </tileset>
- <tileset firstgid="30" name="Spring" tilewidth="32" tileheight="32" tilecount="1">
+ <tileset firstgid="30" name="Spring" tilewidth="32" tileheight="32" tilecount="1" columns="1">
   <image source="img/spring.png" width="32" height="32"/>
  </tileset>
- <tileset firstgid="31" name="Decor" tilewidth="32" tileheight="32" tilecount="64">
+ <tileset firstgid="31" name="Decor" tilewidth="32" tileheight="32" tilecount="64" columns="8">
   <image source="img/decorSaloon.png" width="256" height="256"/>
  </tileset>
  <layer name="Collision_Layer" width="42" height="30">
@@ -49,8 +54,8 @@
 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,1,
 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,1,1,1,1,
 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
 1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,0,0,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
 1,1,1,1,1,1,1,1,1,1,8,8,1,1,1,1,1,1,8,8,1,1,8,8,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 </data>
@@ -117,8 +122,8 @@
 17,0,0,0,0,0,0,0,41,42,0,0,0,0,0,0,0,0,0,41,42,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,30,17,
 17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,23,23,17,17,0,0,0,0,17,17,17,17,
 17,0,0,0,0,0,0,0,0,0,0,0,0,31,32,0,0,0,0,0,0,0,0,0,0,0,0,0,23,17,17,17,17,17,17,23,23,23,17,17,17,17,
-17,0,0,0,0,0,0,0,0,0,0,0,0,39,40,0,0,0,0,0,0,0,0,0,0,0,0,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,
-17,0,0,0,0,0,0,0,0,0,0,0,0,47,48,0,0,0,0,0,0,0,0,0,0,0,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,
+17,0,0,0,0,17,17,0,0,0,0,0,0,39,40,0,0,0,0,0,0,0,0,0,0,0,0,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,
+17,0,0,0,0,17,17,0,0,0,0,0,0,47,48,0,0,0,0,0,0,0,0,0,0,0,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,
 17,17,23,23,17,17,17,17,17,17,0,0,17,17,23,17,23,17,0,0,17,17,0,0,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,
 17,17,17,17,17,17,17,17,17,17,8,8,17,17,17,17,17,17,8,8,17,17,8,8,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17
 </data>

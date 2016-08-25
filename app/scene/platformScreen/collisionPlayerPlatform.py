@@ -29,7 +29,7 @@ class CollisionPlayerPlatform:
         i=0
 
         if player.rect.right + player.speedx > 0:
-            if player.speedx >= self.tileWidth:
+            if player.speedx >= self.tileWidth: #Si on va plus vite qu'une tile/seconde
                 while player.rect.right+i*self.tileWidth < player.rect.right + player.speedx:
                     if player.rect.right+i*self.tileWidth >= self.mapWidth:
                         j=0
@@ -58,6 +58,7 @@ class CollisionPlayerPlatform:
                     # while map.tmxData.get_tile_gid((player.rect.right + 1)/self.tileWidth, player.rect.top/self.tileHeight, COLLISION_LAYER) != SOLID and map.tmxData.get_tile_gid((player.rect.right + 1)/self.tileWidth, (player.rect.bottom)/self.tileHeight, COLLISION_LAYER) != SOLID:
                     #     player.rect.right += 1
                     player.speedx = 0
+                    player.rect.right += self.tileWidth - (player.rect.right % self.tileWidth) - 1 #On colle le player sur le mur à droite
                 elif upRightTileGid  == SPIKE or downRightTileGid == SPIKE or lowMidRightTileGid == SPIKE or highMidRightTileGid == SPIKE:
                     player.dead()
                 elif (upRightTileGid  == SPRING or downRightTileGid == SPRING or lowMidRightTileGid == SPRING or highMidRightTileGid == SPRING) and player.speedx > 0:
@@ -112,6 +113,7 @@ class CollisionPlayerPlatform:
                 # while map.tmxData.get_tile_gid((player.rect.left)/tileWidth, player.rect.top/tileHeight, COLLISION_LAYER) != SOLID and map.tmxData.get_tile_gid((player.rect.left)/tileWidth, (player.rect.bottom-1)/tileHeight, COLLISION_LAYER) != SOLID:
                 #     player.rect.left -= 1
                 player.speedx = 0
+                player.rect.left -= (player.rect.left % self.tileWidth) #On colle le player sur le mur de gauche
             elif upLeftTileGid  == SPIKE or downLeftTileGid  == SPIKE or lowMidLeftTileGid == SPIKE or highMidLeftTileGid == SPIKE:
                 player.dead()
             elif (upLeftTileGid  == SPRING or downLeftTileGid  == SPRING or lowMidLeftTileGid == SPRING or highMidLeftTileGid == SPRING) and player.speedx < 0:
